@@ -27,7 +27,7 @@ export const Default: StoryObj = {
     const canvas = within(canvasElement)
 
     userEvent.type(canvas.getByPlaceholderText('Digite seu e-mail'), 'italo.x.sales@hotmail.com')
-    userEvent.type(canvas.getByPlaceholderText('******'), '123456')
+    userEvent.type(canvas.getByPlaceholderText('******'), '12345678')
 
     userEvent.click(canvas.getByRole('button'))
 
