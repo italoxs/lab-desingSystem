@@ -9,7 +9,7 @@ export default {
   component: SignIn,
   args: {},
   argTypes: {},
-  parameters:{
+  parameters: {
     msw: {
       handlers: [
         rest.post('/sessions', (req, res, ctx) => {
@@ -27,12 +27,12 @@ export const Default: StoryObj = {
     const canvas = within(canvasElement)
 
     userEvent.type(canvas.getByPlaceholderText('Digite seu e-mail'), 'italo.x.sales@hotmail.com')
-    userEvent.type(canvas.getByPlaceholderText('******'), '123456')
+    userEvent.type(canvas.getByPlaceholderText('******'), '1234567')
 
     userEvent.click(canvas.getByRole('button'))
 
     await waitFor(() => {
       return expect(canvas.getByText('Login realizado!')).toBeInTheDocument()
-    })   
+    })
   }
 }
