@@ -9,17 +9,17 @@ import { Text } from "../components/Text";
 import { Logo } from "../Logo";
 
 export function SignIn() {
-  const [isUserSignedIn, setIsUserSignedIn] = useState(false);
+  const [isUserSignedIn, setIsUserSignedIn] = useState(false)
 
   async function handleSignIn(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
     await axios.post('/sessions', {
-      email: "italo.x.sales@hotmail.com",
-      password: '123456',
+      email: 'diego@rocketseat.com.br',
+      password: '12345678',
     })
 
-    setIsUserSignedIn(true);
+    setIsUserSignedIn(true)
   }
 
   return (
@@ -37,8 +37,8 @@ export function SignIn() {
       </header>
 
       <form onSubmit={handleSignIn} className='flex flex-col gap-4 items-stretch w-full max-w-sm mt-10'>
-        { isUserSignedIn && <Text>Login realizado!</Text> }
-        
+        {isUserSignedIn && <Text>Login realizado!</Text>}
+
         <label htmlFor="email" className='flex flex-col gap-3'>
           <Text className='font-semibold'>Endereço de e-mail</Text>
           <TextInput.Root>
@@ -50,12 +50,13 @@ export function SignIn() {
           </TextInput.Root>
         </label>
 
-        <label htmlFor="email" className='flex flex-col gap-3'>
+        <label htmlFor="password" className='flex flex-col gap-3'>
           <Text className='font-semibold'>Sua senha</Text>
           <TextInput.Root>
             <TextInput.Icon>
               <Lock />
             </TextInput.Icon>
+            
             <TextInput.Input type='password' id='password' placeholder="******" />
           </TextInput.Root>
         </label>
